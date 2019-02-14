@@ -29,7 +29,6 @@ module.exports = function(source) {
 
   const cacheKey = `${resourcePath}.....${zones}`
   if (cache.has(cacheKey)) {
-    console.log('cache hit', cacheKey)
     return success(cache.get(cacheKey))
   }
 
