@@ -20,6 +20,10 @@
   "dependencies": {
     "loader-utils": "^1.2.3"
   },
+  "peerDependencies": {
+    "moment-timezone": "0.5.x",
+    "webpack": "4.x"
+  },
   "files": [
     "index.js"
   ]
