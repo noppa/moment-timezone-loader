@@ -21,10 +21,9 @@ module.exports = function(source) {
     return success(source)
   }
   const dataFilePath = path.dirname(resourcePath) + '/data/packed/latest.json'
-  const str = JSON.stringify
   function shouldIncludeZone(zoneConfig) {
     const zone = zoneConfig.substring(0, zoneConfig.indexOf('|'))
-    return zones.includes(zone)
+    return zone === 'Etc/UTC' || zones.includes(zone)
   }
 
   const cacheKey = `${resourcePath}.....${zones}`
@@ -41,11 +40,11 @@ module.exports = function(source) {
         links: fullTimezoneData.links.filter(shouldIncludeZone),
       })
 
-      const generatedModule = `
-          import momentTimezone from './moment-timezone.js'
-          momentTimezone.tz.load(${str(timezoneData)})
-          export default momentTimezone
-        `
+      const generatedModule = [
+        'var moment = module.exports = require("./moment-timezone.js");',
+        'moment.tz.load(' + JSON.stringify(timezoneData) + ');',
+      ].join('\n')
+
       cache.set(cacheKey, generatedModule)
       return success(generatedModule)
     } catch (err) {
