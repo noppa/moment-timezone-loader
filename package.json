@@ -1,6 +1,6 @@
 {
   "name": "moment-timezone-loader",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Webpack loader for moment-timezone that lets you cherry-pick the timezones you need",
   "main": "index.js",
   "scripts": {
