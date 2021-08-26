@@ -4,7 +4,8 @@
   "description": "Webpack loader for moment-timezone that lets you cherry-pick the timezones you need",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint index.js"
   },
   "keywords": [
     "webpack",
@@ -15,14 +16,14 @@
   "author": "noppa",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^5.13.0"
+    "eslint": "^7.32.0"
   },
   "dependencies": {
-    "loader-utils": "^1.2.3"
+    "loader-utils": "^2.0.0"
   },
   "peerDependencies": {
     "moment-timezone": "0.5.x",
-    "webpack": "4.x"
+    "webpack": ">= 4"
   },
   "files": [
     "index.js"
