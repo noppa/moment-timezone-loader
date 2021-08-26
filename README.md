@@ -52,6 +52,6 @@ moment().tc('UTC')
 moment().tc('America/New_York')
 ```
 
-The timezones are taken from [this json file](https://github.com/moment/moment-timezone/blob/d0bcdcad01acece5df6988603e8cec146d78bd12/data/packed/latest.json)
+The timezones are taken from [this json file](https://github.com/moment/moment-timezone/blob/develop/data/packed/latest.json) 
 in the moment-timezone version you are using. Timezone Etc/UTC is always included and doesn't
 need to be explicitly specified in the zones-option.
